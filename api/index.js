@@ -1,9 +1,5 @@
 export const config = {
-  runtime: 'edge',
+  runtime: 'nodejs',
 };
 
-import server from '../dist/server/server.js';
-
-export default function (req) {
-  return server.fetch(req);
-}
+export { default } from '../dist/server/server.js';
