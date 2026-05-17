@@ -5,7 +5,7 @@ import { GraduationCap } from "lucide-react";
 
 export function Timeline() {
   return (
-    <section id="experience" className="relative scroll-mt-24 py-24 sm:py-32">
+    <section id="experience" className="relative scroll-mt-24 py-10 sm:py-20 lg:py-24">
       <div className="mx-auto max-w-6xl px-4">
         <Reveal>
           <SectionHeading
@@ -15,7 +15,7 @@ export function Timeline() {
           />
         </Reveal>
 
-        <div className="mt-14 grid gap-12 lg:grid-cols-[1.4fr_1fr]">
+        <div className="mt-8 grid gap-8 sm:mt-14 sm:gap-12 lg:grid-cols-[1.4fr_1fr]">
           {/* Timeline */}
           <ol className="relative space-y-8 border-l border-white/10 pl-6">
             <span
@@ -24,7 +24,7 @@ export function Timeline() {
             />
             {TIMELINE.map((item, i) => (
               <Reveal key={item.org} delay={i * 100} as="li">
-                <div className="relative">
+                <div className="relative" itemScope itemType="https://schema.org/WorkExperience">
                   <span
                     aria-hidden
                     className="absolute -left-[34px] top-1.5 grid h-4 w-4 place-items-center rounded-full bg-background ring-2 ring-[var(--brand-blue)]"
@@ -33,17 +33,17 @@ export function Timeline() {
                   </span>
                   <div className="glass rounded-xl p-5">
                     <div className="flex flex-wrap items-baseline justify-between gap-2">
-                      <h3 className="text-base font-semibold text-foreground">
+                      <h3 className="text-base font-semibold text-foreground" itemProp="name">
                         {item.title}
-                        <span className="text-foreground/60"> · {item.org}</span>
+                        <span className="text-foreground/60"> · <span itemProp="provider">{item.org}</span></span>
                       </h3>
                       <span className="text-xs font-medium text-[var(--brand-blue)]">
                         {item.period}
                       </span>
                     </div>
-                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                      {item.description}
-                    </p>
+                      <p className="mt-2 text-sm leading-relaxed text-muted-foreground" itemProp="description">
+                        {item.description}
+                      </p>
                   </div>
                 </div>
               </Reveal>
@@ -52,7 +52,7 @@ export function Timeline() {
 
           {/* Education */}
           <Reveal delay={200}>
-            <aside className="glass-strong h-full rounded-2xl p-7">
+            <aside className="glass-strong h-full rounded-2xl p-7" itemScope itemType="https://schema.org/EducationalOrganization">
               <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--brand-purple)]">
                 Education
               </span>
@@ -61,8 +61,8 @@ export function Timeline() {
                   <GraduationCap className="h-5 w-5 text-foreground" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-foreground">{EDUCATION.degree}</h3>
-                  <p className="mt-1 text-sm text-foreground/70">{EDUCATION.school}</p>
+                  <h3 className="text-lg font-semibold text-foreground" itemProp="name">{EDUCATION.degree}</h3>
+                  <p className="mt-1 text-sm text-foreground/70" itemProp="alumni">{EDUCATION.school}</p>
                   <p className="mt-1 text-xs text-[var(--brand-blue)]">{EDUCATION.period}</p>
                 </div>
               </div>

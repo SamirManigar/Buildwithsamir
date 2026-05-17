@@ -1,12 +1,12 @@
 export const PROFILE = {
   name: "Samir Ahmad Manigar",
   role: "Full Stack Developer & AI Workflow Builder",
-  hook:
-    "Specializing in rapid, AI-integrated applications and agentic workflows to ship high-impact features with efficiency.",
+  hook: "Building rapid Next.js and TypeScript apps with AI automation, LLM integrations, and agentic workflows that ship high-impact features faster.",
   location: "Goa, India",
   email: "sameermanigar643@gmail.com",
   github: "https://github.com/SamirManigar",
   agency: "https://aurionstack.dev",
+  resume: "/samir-manigar-resume.pdf",
 };
 
 export const STACK: { title: string; items: string[] }[] = [

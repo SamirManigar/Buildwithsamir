@@ -7,8 +7,8 @@ export function Footer() {
         <div className="text-xs text-muted-foreground">
           © {new Date().getFullYear()} {PROFILE.name}. Crafted in {PROFILE.location}.
         </div>
-        <div className="flex items-center gap-4 text-xs text-muted-foreground">
-          <a href={`mailto:${PROFILE.email}`} className="hover:text-foreground transition-colors">
+        <address className="flex items-center gap-4 text-xs text-muted-foreground not-italic">
+          <a href={`mailto:${PROFILE.email}`} className="hover:text-foreground transition-colors" itemProp="email">
             {PROFILE.email}
           </a>
           <span className="opacity-30">·</span>
@@ -20,7 +20,7 @@ export function Footer() {
           >
             aurionstack.dev
           </a>
-        </div>
+        </address>
       </div>
     </footer>
   );

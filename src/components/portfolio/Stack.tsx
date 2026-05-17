@@ -6,7 +6,7 @@ const ICONS = [Code2, Cloud, Brain];
 
 export function Stack() {
   return (
-    <section id="stack" className="relative scroll-mt-24 py-24 sm:py-32">
+    <section id="stack" className="relative scroll-mt-24 py-10 sm:py-20 lg:py-24" aria-label="Core Technology Stack">
       <div className="mx-auto max-w-6xl px-4">
         <Reveal>
           <SectionHeading
@@ -16,7 +16,7 @@ export function Stack() {
           />
         </Reveal>
 
-        <div className="mt-14 grid gap-5 md:grid-cols-3">
+        <div className="mt-8 grid gap-5 sm:mt-14 md:grid-cols-3">
           {STACK.map((group, i) => {
             const Icon = ICONS[i] ?? Code2;
             return (
@@ -34,6 +34,7 @@ export function Stack() {
                     {group.items.map((item) => (
                       <li
                         key={item}
+                        itemProp="knowsAbout"
                         className="rounded-lg border border-white/10 bg-white/5 px-2.5 py-1 text-xs text-muted-foreground transition-colors group-hover:text-foreground/90"
                       >
                         {item}
@@ -64,11 +65,11 @@ export function SectionHeading({
       <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--brand-blue)]">
         {kicker}
       </span>
-      <h2 className="mt-3 text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl">
+      <h2 className="mt-2 text-3xl font-bold tracking-tight text-foreground sm:mt-3 sm:text-4xl md:text-5xl">
         {title}
       </h2>
       {subtitle && (
-        <p className="mt-4 text-base leading-relaxed text-muted-foreground sm:text-lg">
+        <p className="mt-3 text-base leading-relaxed text-muted-foreground sm:mt-4 sm:text-lg">
           {subtitle}
         </p>
       )}

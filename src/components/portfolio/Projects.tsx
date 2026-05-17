@@ -5,7 +5,7 @@ import { SectionHeading } from "./Stack";
 
 export function Projects() {
   return (
-    <section id="work" className="relative scroll-mt-24 py-24 sm:py-32">
+    <section id="work" className="relative scroll-mt-24 py-10 sm:py-20 lg:py-24">
       <div className="mx-auto max-w-6xl px-4">
         <Reveal>
           <SectionHeading
@@ -15,10 +15,11 @@ export function Projects() {
           />
         </Reveal>
 
-        <div className="mt-14 grid gap-6 lg:grid-cols-3">
+        <div className="mt-8 grid gap-6 sm:mt-14 lg:grid-cols-3">
           {PROJECTS.map((p, i) => (
             <Reveal key={p.name} delay={i * 120}>
-              <article className="group relative h-full overflow-hidden rounded-2xl">
+              <article className="group relative h-full overflow-hidden rounded-2xl" itemScope itemType="https://schema.org/SoftwareApplication">
+                <meta itemProp="applicationCategory" content="WebApplication" />
                 {/* Gradient border on hover */}
                 <div
                   aria-hidden
@@ -39,7 +40,7 @@ export function Projects() {
                       <span className="inline-block rounded-md bg-white/5 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-[var(--brand-purple)] ring-1 ring-white/10">
                         {p.role}
                       </span>
-                      <h3 className="mt-3 text-xl font-bold tracking-tight text-foreground">
+                      <h3 className="mt-3 text-xl font-bold tracking-tight text-foreground" itemProp="name">
                         {p.name}
                       </h3>
                       <p className="mt-1 text-sm font-medium text-foreground/70">{p.tagline}</p>
@@ -47,7 +48,7 @@ export function Projects() {
                     <ArrowUpRight className="h-5 w-5 shrink-0 text-muted-foreground transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-foreground" />
                   </div>
 
-                  <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
+                  <p className="mt-5 text-sm leading-relaxed text-muted-foreground" itemProp="description">
                     {p.description}
                   </p>
 
@@ -55,6 +56,7 @@ export function Projects() {
                     {p.tech.map((t) => (
                       <li
                         key={t}
+                        itemProp="keywords"
                         className="rounded-md bg-white/5 px-2 py-0.5 text-[11px] text-muted-foreground"
                       >
                         {t}

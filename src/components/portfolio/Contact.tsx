@@ -60,7 +60,7 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className="relative scroll-mt-24 py-24 sm:py-32">
+    <section id="contact" className="relative scroll-mt-24 py-10 sm:py-20 lg:py-24">
       <div className="mx-auto max-w-6xl px-4">
         <Reveal>
           <SectionHeading
@@ -70,7 +70,7 @@ export function Contact() {
           />
         </Reveal>
 
-        <div className="mt-14 grid gap-8 lg:grid-cols-[1.1fr_1fr]">
+        <div className="mt-8 grid gap-8 sm:mt-14 lg:grid-cols-[1.1fr_1fr]">
           {/* Form */}
           <Reveal>
             <form
